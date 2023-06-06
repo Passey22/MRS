@@ -15,5 +15,3 @@ lxml
 urllib3
 requests
 pickleshare
-redirect
-render_template
