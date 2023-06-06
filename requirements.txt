@@ -15,3 +15,10 @@ lxml
 urllib3
 requests
 pickleshare
+patsy
+pickle
+flask_mysqldb
+session
+request
+redirect
+render_template
