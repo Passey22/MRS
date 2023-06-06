@@ -16,3 +16,4 @@ urllib3
 requests
 pickleshare
 patsy
+flask_mysqldb
