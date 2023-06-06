@@ -15,7 +15,7 @@ lxml
 urllib3
 requests
 pickleshare
-flask_mysqldb
+flask_mysqldb==1.8.1
 session
 request
 redirect
