@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Paradiso</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <img src="/static/img/81387.png" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="/aboutpr">About Project</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1 class="multiple-text">HOME</h1>
+          <p>
+            Welcome to our movie website, where you can discover and explore
+            classic films. With our vast collection of movies, we're the
+            ultimate destination for all cinephiles. So sit back, grab some
+            popcorn, and enjoy the home of cinema with us!
+          </p>
+          <a href="/home">
+            <button type="button">Recommend Movie</button>
+          </a>
+        </div>
+        <div class="col">
+          <div class="card card1">
+            <h5>HER</h5>
+          </div>
+          <div class="card card2">
+            <h5>John Wick</h5>
+          </div>
+          <div class="card card3">
+            <h5>The Godfather</h5>
+          </div>
+          <div class="card card4">
+            <h5>Beautiful Boy</h5>
+          </div>
+          <div class="card card5">
+            <h5>Goodfellas</h5>
+          </div>
+          <div class="card card6">
+            <h5>Oppenheimer</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- typed js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card");
+        const imdbUrls = {
+          card1: "https://www.imdb.com/title/tt1798709/",
+          card2: "https://www.imdb.com/title/tt2911666/",
+          card3: "https://www.imdb.com/title/tt0068646/",
+          card4: "https://www.imdb.com/title/tt1226837/",
+          card5: "https://www.imdb.com/title/tt0099685/",
+          card6: "https://www.imdb.com/title/tt15398776/",
+        };
+
+        cards.forEach(function (card) {
+          card.addEventListener("click", function () {
+            const movieName = this.classList[1];
+            const url = imdbUrls[movieName];
+            if (url) {
+              window.open(url, "_blank");
+            }
+          });
+        });
+      });
+
+      const typed = new Typed(".multiple-text", {
+        strings: ["HOME", "OF", "CINEMA", "HOME OF CINEMA"],
+        typeSpeed: 100,
+        backSpeed: 200,
+        backDelay: 1000,
+        loop: true,
+      });
+    </script>
+  </body>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Acme", sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+        url("/static/img/background.jpg");
+      background-position: center;
+      background-size: cover;
+      padding-left: 8%;
+      padding-right: 8%;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      height: 12%;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+
+    nav ul li {
+      list-style: none;
+      display: inline-block;
+      margin: 60px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    .row {
+      display: flex;
+      height: 88%;
+      align-items: center;
+    }
+
+    .col {
+      flex-basis: 50%;
+    }
+
+    h1 {
+      color: peachpuff;
+      font-size: 80px;
+    }
+
+    p {
+      color: gainsboro;
+      font-size: 18px;
+      line-height: 15px;
+    }
+
+    button {
+      width: 180px;
+      color: #000;
+      font-size: 18px;
+      padding: 12px 0;
+      background: #fff;
+      border: 0;
+      border-radius: 20px;
+      outline: none;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background-color: yellow;
+    }
+
+    .card {
+      width: 150px;
+      height: 200px;
+      display: inline-block;
+      border-radius: 10px;
+      padding: 15px 25px;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin: 20px 30px;
+      background-position: center;
+      background-size: cover;
+      transition: transform 0.5s;
+    }
+
+    .card1 {
+      background-image: url(/static/img/129180_ae.jpg);
+    }
+
+    .card2 {
+      background-image: url(/static/img/johnwick.jpg);
+    }
+
+    .card3 {
+      background-image: url(/static/img/godfather.jpg);
+    }
+
+    .card4 {
+      background-image: url(/static/img/beautifullboy.jpg);
+    }
+
+    .card5 {
+      background-image: url(/static/img/goodfellas.jpg);
+    }
+
+    .card6 {
+      background-image: url(/static/img/Oppenheimer.jpg);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    h5 {
+      color: black;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .card p {
+      text-shadow: 0 0 5px #000;
+      font-size: 8px;
+    }
+  </style>
+</html>
