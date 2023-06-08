@@ -1,182 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <title>Signup</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="container forms">
-        <div class="form login">
-            <div class="form-content">
-                <header>Ready to become a Cinephile ?</header>
+      <video
+        class="video-background"
+        src="/hd0290.mp4"
+        autoplay
+        loop
+        muted
+      ></video>
+      <div class="form login">
+        <div class="form-content">
+          <header>Ready to become a Cinephile ?</header>
 
-                <form  action="{{url_for('signup')}}" method="POST">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" name="email" class="input">
-                    </div>
-
-                    <div class="field input-field">
-                        <i id="eyeIcon1" class="fas fa-eye"></i>
-                        <input type="password" placeholder="Password" class="password" id="passwordInput1" name="password1">
-                    </div>
-
-                    <div class="field input-field">
-                        <i id="eyeIcon2" class="fas fa-eye"></i>
-                        <input type="password" placeholder="Password" class="password"  id="passwordInput2" name="password2">
-                    </div>
-
-                    <div class="field button-field">
-                        <input type="submit" value="Signup" class="button" name="signup">
-                    </div>
-
-                </form>
-
-                <div class="form-link">
-                    <span>Already a member ? <a href="/login" class="link login-link">Login</a></span>
-                </div>
-
-                <div class="form-link">
-                    <span><a href="/" class="home-link">Back to Home</a></span>
-                </div>
+          <form action="{{url_for('signup')}}" method="POST">
+            <div class="field input-field">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                class="input"
+              />
             </div>
+
+            <div class="field input-field">
+              <i id="eyeIcon1" class="fas fa-eye"></i>
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="passwordInput1"
+                name="password1"
+              />
+            </div>
+
+            <div class="field input-field">
+              <i id="eyeIcon2" class="fas fa-eye"></i>
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="passwordInput2"
+                name="password2"
+              />
+            </div>
+
+            <div class="field button-field">
+              <input
+                type="submit"
+                value="Signup"
+                class="button"
+                name="signup"
+              />
+            </div>
+          </form>
+
+          <div class="form-link">
+            <span
+              >Already a member ?
+              <a href="/login" class="link login-link">Login</a></span
+            >
+          </div>
+
+          <div class="form-link">
+            <span><a href="/" class="home-link">Back to Home</a></span>
+          </div>
         </div>
+      </div>
     </section>
 
     <script src="{{ url_for('static', filename='javascript/script1.js') }}"></script>
+  </body>
 
-</body>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    * {
+        margin: 0;
+        padding: 5px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-* {
-    margin: 0;
-    padding: 5px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    .container {
+        column-gap: 3px;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(85, 10, 10);
+    }
 
-.container {
-    column-gap: 3px;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(85, 10, 10);
-}
+    .form {
+        position: absolute;
+        max-width: 430px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 6px;
+        background: peachpuff;
+    }
 
-.form {
-    position: absolute;
-    max-width: 430px;
-    width: 100%;
-    padding: 25px;
-    border-radius: 6px;
-    background: peachpuff;
-}
+    .form.signup {
+        opacity: 0;
+        pointer-events: none;
+    }
 
-.form.signup {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.form.show-signup.form.signup {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-
-header {
-    font-size: 28px;
-    font-weight: 600;
-    color: #232836;
-    text-align: center;
-}
-
-form {
-    margin-top: 30px;
-}
-
-form.field {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.field input,
-.field button {
-    height: 100%;
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    font-weight: 80;
-    border-radius: 6px;
-}
-
-#passwordInput2{
-    margin-bottom: 25px;
-}
-
-.field input {
-    outline: none;
-    padding: 2px 15px;
-    border: 2px solid #cacaca';
-
-}
-
-.field input:focus {
-    border-bottom-width: 2px;
-}
-
-.button {
-    color: #fff;
-    background-color: rgb(85, 10, 10);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.button:hover {
-    color: #fff;
-    background-color:#d73d0a77;
-}
-
-#eyeIcon1, #eyeIcon2{
-    position: relative;
-    left:90%;
-    top:25px;
-    color: black;
-    cursor:pointer;
-}
+    .form.show-signup.form.signup {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
 
-.form-link {
-    text-align: center;
-    margin-top: 10px;
-}
+    header {
+        font-size: 28px;
+        font-weight: 600;
+        color: #232836;
+        text-align: center;
+    }
 
-.form-link span,
-.form-link a {
-    font-size: 14px;
-    font-weight: 400;
-    color: #232836;
-}
+    form {
+        margin-top: 30px;
+    }
 
-.form a {
-    color: #0171d3;
-    text-decoration: none;
-}
+    form.field {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
 
-.form-content a:hover {
-    text-decoration: underline;
-}
+    .field input,
+    .field button {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 16px;
+        font-weight: 80;
+        border-radius: 6px;
+    }
+
+    #passwordInput2{
+        margin-bottom: 25px;
+    }
+
+    .field input {
+        outline: none;
+        padding: 2px 15px;
+        border: 2px solid #cacaca';
+
+    }
+
+    .field input:focus {
+        border-bottom-width: 2px;
+    }
+
+    .button {
+        color: #fff;
+        background-color: rgb(85, 10, 10);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        color: #fff;
+        background-color:#d73d0a77;
+    }
+
+    #eyeIcon1, #eyeIcon2{
+        position: relative;
+        left:90%;
+        top:25px;
+        color: black;
+        cursor:pointer;
+    }
 
 
-</style>
+    .form-link {
+        text-align: center;
+        margin-top: 10px;
+    }
 
+    .form-link span,
+    .form-link a {
+        font-size: 14px;
+        font-weight: 400;
+        color: #232836;
+    }
+
+    .form a {
+        color: #0171d3;
+        text-decoration: none;
+    }
+
+    .form-content a:hover {
+        text-decoration: underline;
+    }
+  </style>
 </html>
