@@ -83,8 +83,6 @@
         backDelay: 400,
         loop: true,
       });
-     
-
     </script>
   </body>
 
@@ -92,22 +90,26 @@
     * {
       margin: 0;
       padding: 0;
-    }
-
-    .container {
-      width: 100%;
-      min-height: 100vh;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
-        url("/static/img/background.jpg");
-      background-position: center;
-      background-size: cover;
-      padding-left: 5%;
-      padding-right: 5%;
       box-sizing: border-box;
     }
 
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("/static/img/background.jpg");
+      background-position: center;
+      background-size: cover;
+      padding: 4.5%;
+      overflow: auto;
+    }
+
     .navbar {
-      height: 15%;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      height:15%;
       display: flex;
       align-items: center;
     }
@@ -124,7 +126,7 @@
     }
 
     .multiple-text {
-        white-space: nowrap; /* Prevent text from wrapping to the next line */
+      white-space: nowrap; /* Prevent text from wrapping to the next line */
     }
 
     .navbar {
@@ -138,7 +140,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: white;
+      background-color: #fff;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.5s ease;
@@ -179,12 +181,15 @@
     .row {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 10px;
     }
 
     .col {
-      flex-basis: 80%;
-      max-width: 50%;
-      box-sizing:border-box;
+      flex-basis: 45%;
+      max-width: 45%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -271,7 +276,7 @@
       background-size: cover;
     }
 
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 767px) {
       /* Container adjustments */
       .container {
         padding-left: 5%;
@@ -301,10 +306,15 @@
       }
 
       /* Cards adjustments */
+      .col {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
       .card {
-        max-width: 100px;
-        max-height: 150px;
-        margin: 20px;
+        max-width: 200px;
+        max-height: 300px;
+        margin: 10px;
       }
     }
   </style>
