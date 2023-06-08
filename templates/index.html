@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinema Paradiso</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Josefin+Sans&family=Mukta:wght@600&family=Tilt+Prism&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -23,6 +27,7 @@
           </ul>
         </nav>
       </div>
+      <div class="gap"></div>
       <div class="row">
         <div class="col">
           <h1 class="multiple-text">HOME</h1>
@@ -37,39 +42,26 @@
           </a>
         </div>
         <div class="col">
-          <div class="card card1">
-            <h5>HER</h5>
-          </div>
-          <div class="card card2">
-            <h5>John Wick</h5>
-          </div>
-          <div class="card card3">
-            <h5>The Godfather</h5>
-          </div>
-          <div class="card card4">
-            <h5>Beautiful Boy</h5>
-          </div>
-          <div class="card card5">
-            <h5>Goodfellas</h5>
-          </div>
-          <div class="card card6">
-            <h5>Oppenheimer</h5>
-          </div>
+          <div class="card card1"></div>
+          <div class="card card2"></div>
+          <div class="card card3"></div>
+          <div class="card card4"></div>
+          <div class="card card5"></div>
+          <div class="card card6"></div>
         </div>
       </div>
     </div>
-    <!-- typed js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const cards = document.querySelectorAll(".card");
         const imdbUrls = {
-          card1: "https://www.imdb.com/title/tt1798709/",
-          card2: "https://www.imdb.com/title/tt2911666/",
-          card3: "https://www.imdb.com/title/tt0068646/",
-          card4: "https://www.imdb.com/title/tt1226837/",
-          card5: "https://www.imdb.com/title/tt0099685/",
-          card6: "https://www.imdb.com/title/tt15398776/",
+          card1: "https://www.themoviedb.org/movie/27205-inception",
+          card2: "https://www.themoviedb.org/movie/238-the-godfather",
+          card3: "https://www.themoviedb.org/movie/245891-john-wick",
+          card4: "https://www.themoviedb.org/movie/769-goodfellas",
+          card5: "https://www.themoviedb.org/movie/451915-beautiful-boy",
+          card6: "https://www.themoviedb.org/movie/872585-oppenheimer",
         };
 
         cards.forEach(function (card) {
@@ -83,6 +75,7 @@
         });
       });
 
+      
       const typed = new Typed(".multiple-text", {
         strings: ["HOME", "OF", "CINEMA", "HOME OF CINEMA"],
         typeSpeed: 100,
@@ -90,6 +83,8 @@
         backDelay: 1000,
         loop: true,
       });
+     
+
     </script>
   </body>
 
@@ -97,30 +92,60 @@
     * {
       margin: 0;
       padding: 0;
-      font-family: "Acme", sans-serif;
     }
 
     .container {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
         url("/static/img/background.jpg");
       background-position: center;
       background-size: cover;
-      padding-left: 8%;
-      padding-right: 8%;
+      padding-left: 5%;
+      padding-right: 5%;
       box-sizing: border-box;
     }
 
     .navbar {
-      height: 12%;
+      height: 15%;
       display: flex;
       align-items: center;
     }
 
     .logo {
-      width: 200px;
+      width: 250px;
       cursor: pointer;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    .multiple-text {
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
+    }
+
+    .navbar {
+      position: relative;
+    }
+
+    .navbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .navbar:hover::after {
+      transform: scaleX(1);
     }
 
     nav {
@@ -131,50 +156,63 @@
     nav ul li {
       list-style: none;
       display: inline-block;
-      margin: 60px;
+      margin: 45px;
     }
 
     nav ul li a {
-      text-decoration: none;
+      text-decoration: dashed;
       color: #fff;
-      font-size: 20px;
+      font-size: 28px;
+      font-family: "Mukta", sans-serif;
+      transition: transform 0.3s ease;
     }
 
     nav ul li a:hover {
+      transform: scale(1.1) translateY(-5px);
       color: yellow;
+    }
+
+    .gap {
+      height: 80px;
     }
 
     .row {
       display: flex;
-      height: 88%;
-      align-items: center;
+      flex-wrap: wrap;
     }
 
     .col {
-      flex-basis: 50%;
+      flex-basis: 80%;
+      max-width: 50%;
+      box-sizing:border-box;
     }
 
     h1 {
-      color: peachpuff;
-      font-size: 80px;
+      color: rgba(247, 232, 118, 0.995);
+      font-size: 65px;
+      font-family: "Tilt Prism", cursive;
     }
 
     p {
       color: gainsboro;
-      font-size: 18px;
-      line-height: 15px;
+      font-size: 20px;
+      line-height: 1.2;
+      font-family: "Mukta", sans-serif;
+      padding-right: 11%;
     }
 
     button {
-      width: 180px;
+      width: 350px;
+      height: 60px;
       color: #000;
-      font-size: 18px;
-      padding: 12px 0;
+      font-size: 25px;
+      padding: 10px 10px;
       background: #fff;
       border: 0;
-      border-radius: 20px;
+      border-radius: 30px;
       outline: none;
-      margin-top: 30px;
+      margin-top: 50px;
+      font-family: "Mukta", sans-serif;
     }
 
     button:hover {
@@ -182,55 +220,92 @@
     }
 
     .card {
-      width: 150px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
+      max-width: 150px;
+      max-height: 200px;
       display: inline-block;
-      border-radius: 10px;
-      padding: 15px 25px;
-      box-sizing: border-box;
+      border-radius: 15px;
+      padding: 8px 14px;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(3.5px);
+      -webkit-backdrop-filter: blur(3.5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.3s ease;
       cursor: pointer;
-      margin: 20px 30px;
-      background-position: center;
-      background-size: cover;
-      transition: transform 0.5s;
-    }
-
-    .card1 {
-      background-image: url(/static/img/129180_ae.jpg);
-    }
-
-    .card2 {
-      background-image: url(/static/img/johnwick.jpg);
-    }
-
-    .card3 {
-      background-image: url(/static/img/godfather.jpg);
-    }
-
-    .card4 {
-      background-image: url(/static/img/beautifullboy.jpg);
-    }
-
-    .card5 {
-      background-image: url(/static/img/goodfellas.jpg);
-    }
-
-    .card6 {
-      background-image: url(/static/img/Oppenheimer.jpg);
+      margin: 10px;
     }
 
     .card:hover {
-      transform: translateY(-10px);
+      transform: scale(1.1);
     }
 
-    h5 {
-      color: black;
-      text-shadow: 0 0 5px #fff;
+    .card1 {
+      background: url("/static/img/inception.jpg");
+      background-size: cover;
     }
 
-    .card p {
-      text-shadow: 0 0 5px #000;
-      font-size: 8px;
+    .card2 {
+      background: url("/static/img/godfather.jpg");
+      background-size: cover;
+    }
+
+    .card3 {
+      background: url("/static/img/johnwick.jpg");
+      background-size: cover;
+    }
+
+    .card4 {
+      background: url("/static/img/goodfellas.jpg");
+      background-size: cover;
+    }
+
+    .card5 {
+      background: url("/static/img/beautifullboy.jpg");
+      background-size: cover;
+    }
+
+    .card6 {
+      background: url("/static/img/Oppenheimer.jpg");
+      background-size: cover;
+    }
+
+    @media only screen and (max-width: 375px) {
+      /* Container adjustments */
+      .container {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      /* Navbar adjustments */
+      .navbar {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      /* Site heading adjustments */
+      .multiple-text {
+        font-size: 40px;
+      }
+
+      /* Cards adjustments */
+      .card {
+        max-width: 100px;
+        max-height: 150px;
+        margin: 20px;
+      }
     }
   </style>
 </html>
