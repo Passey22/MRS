@@ -6,120 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact form</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          background-color: rgb(85, 10, 10);
+          text-align: center;
+          position: relative;
+          padding-bottom: 80px; /* Add space for the social media icons */
+        }
+
+        h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 59px;
+          color: #fff;
+          font-weight: 600;
+          padding-bottom: 20px;
+        }
+
+        p {
+          color: #f5f2f2;
+        }
+
+        p,
+        input,
+        textarea,
+        label {
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 5%;
+        }
+
+        form {
+          max-width: 500px;
+          margin: 0 auto;
+          text-align: left;
+          padding: 20px 0;
+        }
+
+        input,
+        textarea,
+        label {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          color: white;
+        }
+
+        input,
+        textarea {
+          background-color:#fff;
+          border: 0;
+          border-bottom: 2px solid #828282;
+        }
+
+        input[type=submit] {
+          background-color: #ac2b07;
+          padding: 15px 0;
+          color: white;
+          font-size: 18px;
+          border-bottom: none;
+          margin-top: 30px;
+          cursor: pointer;
+          transition: all .3s ease;
+        }
+
+        input[type=submit]:hover {
+          background: #e3e60be6;
+          color: #1b1c1e;
+        }
+
+        input,
+        textarea {
+          color: black;
+          font-size: 18px;
+          padding: 10px;
+        }
+
+        input:focus,
+        textarea:focus {
+          outline: 1px solid #828282;
+        }
+
+        a {
+          color: #828282;
+          font-style: italic;
+        }
+
+        a:hover {
+          color: #fff;
+        }
+
+        .video-background {
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          z-index: -1;
+        }
+
+        .video-content {
+          position: relative;
+          z-index: 1;
+        }
+
+        .social-icons {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 20px;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .social-icons ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .social-icons ul li {
+          margin: 0 10px;
+        }
+
+        .social-icons ul li a {
+          color: white;
+          font-size: 20px;
+          transition: color 0.3s ease;
+        }
+
+        .social-icons ul li a:hover {
+          color: #ac2b07;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Contact Us</h1>
-        <p>Thank you for visiting our site !<br> Feel free to contact us and don't forget to write a review</p>
-        <form action="{{url_for('contact')}}" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-            <label for="review">Review:</label>
-            <textarea name="review" cols="30" rows="10"></textarea>
-            <input type="submit" value="Send">
-        </form>
+    <video autoplay loop muted class="video-background">
+        <source src="/hd0290.mp4" type="video/mp4">
+    </video>
+    <div class="video-content">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Thank you for visiting our site!<br> Feel free to contact us and don't forget to write a review</p>
+            <form action="{{url_for('contact')}}" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <label for="review">Review:</label>
+                <textarea name="review" cols="30" rows="10"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </div>
+    <div class="social-icons">
+      <ul>
+          <li><a href="https://github.com"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+  </div>
+  <script src="https://kit.fontawesome.com/6e4d1897f5.js" crossorigin="anonymous"></script>
 </body>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: rgb(85, 10, 10);
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Playfair Display',
-      serif;
-  font-size: 59px;
-  color: peachpuff;
-  font-weight: 600;
-  padding-bottom: 20px;
-}
-
-p {
-  color: #f5f2f2;
-}
-
-p,
-input,
-textarea,
-label {
-  font-family: 'Poppins',
-      sans-serif;
-}
-
-.container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 5%;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 20px 0;
-}
-
-input,
-textarea,
-label {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  color: white;
-}
-
-input,
-textarea {
-  background-color: peachpuff;
-  border: 0;
-  border-bottom: 2px solid #828282;
-}
-
-input[type=submit] {
-  background-color: #ac2b07;
-  padding: 15px 0;
-  color: white;
-  font-size: 18px;
-  border-bottom: none;
-  margin-top: 30px;
-  cursor: pointer;
-  transition: all .3s ease;
-}
-
-input[type=submit]:hover {
-  background: #f27a17;
-  color: #1b1c1e;
-}
-
-input,
-textarea {
-  color: black;
-  font-size: 18px;
-  padding: 10px;
-}
-
-input:focus,
-textarea:focus {
-  outline: 1px solid #828282;
-}
-
-a {
-  color: #828282;
-  font-style: italic;
-}
-
-a:hover {
-  color: #fff;
-}</style>
 </html>
-
