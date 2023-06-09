@@ -25,7 +25,7 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 
   <script type="text/javascript">
-    var films = {{suggestions|tojson}};
+    var films = {{suggestions|tojson}};                                             
     $(document).ready(function(){
       $("#myModal").modal('show');
     });
@@ -81,11 +81,8 @@
 	
 	<footer class="footer">
     <br/> 
-    <div class="social" style="margin-bottom: 8px">
-    <a class="social-icons" href="https://www.linkedin.com/in/satvikpassey/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color: #e4e0e0"></i></a>
-    <a class="social-icons" href="https://twitter.com/SatvikPassey" target="_blank"><i class="fa fa-twitter" style="font-size:24px;color: #e4e0e0"></i></a>
-    <br><a href="/">BACK TO HOME</a>
-  </div>
+    <a href="/">BACK TO HOME</a>
+    </div>
   </footer>
 	</div>
 	
