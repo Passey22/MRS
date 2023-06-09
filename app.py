@@ -19,11 +19,11 @@ app = Flask(__name__)
 
 load_dotenv()
 
-HOST=os.getenv("HOST")
-USER=os.getenv("USER")
-PASSWORD=os.getenv("PASSWORD")
-DATABASE=os.getenv("DATABASE")
-PORT=os.getenv("PORT")
+HOST=os.environ.get("HOST")
+USER=os.environ.get("USER")
+PASSWORD=os.environ.get("PASSWORD")
+DATABASE=os.environ.get("DATABASE")
+PORT=os.environ.get("PORT")
 
 app.config['MYSQL_HOST'] = HOST
 app.config['MYSQL_USER'] = USER
