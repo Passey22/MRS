@@ -17,7 +17,7 @@ requests
 pickleshare
 patsy
 flask_mysqldb
-python-dotenv
+python-dotenv==1.0.0
 os
 
 
