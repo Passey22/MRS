@@ -9,8 +9,8 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'test-do-user-14202162-0.b.db.ondigitalocean.com'
-app.config['MYSQL_USER'] = 'doadmin'
-app.config['MYSQL_PASSWORD'] = 'AVNS_rkN5aF1dXwPhcCdNGZw'
+app.config['MYSQL_USER'] = 'sat'
+app.config['MYSQL_PASSWORD'] ='AVNS_iab8ckAxcw21LnzXRrh'
 app.config['MYSQL_DB'] = 'test'
 app.config['MYSQL_PORT'] = 25060
 
