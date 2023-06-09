@@ -8,11 +8,10 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'test-do-user-14202162-0.b.db.ondigitalocean.com'
-app.config['MYSQL_USER'] = 'sat'
-app.config['MYSQL_PASSWORD'] ='AVNS_iab8ckAxcw21LnzXRrh'
+app.config['MYSQL_HOST'] = 'http://167.71.237.170/phpmyadmin/'
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] ='7de6f6b2d6fd897f411a37b14b6030f6b25461a8fa13822d'
 app.config['MYSQL_DB'] = 'test'
-app.config['MYSQL_PORT'] = 25060
 
 mysql = MySQL(app)
 app.secret_key = '17041973984'
