@@ -17,5 +17,5 @@ requests
 pickleshare
 patsy
 flask_mysqldb
-dotenv
+python-dotenv
 os
