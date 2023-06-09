@@ -18,3 +18,4 @@ pickleshare
 patsy
 flask_mysqldb
 dotenv
+os
