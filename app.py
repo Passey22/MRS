@@ -16,7 +16,6 @@ app.config['MYSQL_DB'] = 'test'
 mysql = MySQL(app)
 app.secret_key = '17041973984'
 
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template("index.html")
