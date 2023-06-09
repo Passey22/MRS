@@ -19,3 +19,4 @@ patsy
 flask_mysqldb
 python-dotenv
 
+
