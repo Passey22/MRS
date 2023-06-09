@@ -23,13 +23,12 @@ host=os.environ.get("HOST")
 user=os.environ.get("USER")
 password=os.environ.get("PASSWORD")
 database=os.environ.get("DATABASE")
-port=os.environ.get("PORT")
 
 app.config['MYSQL_HOST'] = host
 app.config['MYSQL_USER'] = user
 app.config['MYSQL_PASSWORD'] =password
 app.config['MYSQL_DB'] = database
-app.config['MYSQL_PORT'] = port
+app.config['MYSQL_PORT'] = 25060
 
 mysql = MySQL(app)
 app.secret_key = '17041973984'
