@@ -4,7 +4,7 @@ $(function() {
   // Button will be disabled until we type anything inside the input field
   const source = document.getElementById('autoComplete');
   const inputHandler = function(e) {
-    if(e.target.value=="myAPI"){
+    if(e.target.value==""){
       $('.movie-button').attr('disabled', true);
     }
     else{
@@ -28,7 +28,7 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var my_api_key = '2624cdab70a28578cbc7d0f0f7c729b4';
+  var my_api_key = console.log(process.env.myAPI);
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
