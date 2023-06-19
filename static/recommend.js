@@ -1,8 +1,10 @@
+import { config } from "dotenv";
+config()
 $(function() {
   // Button will be disabled until we type anything inside the input field
   const source = document.getElementById('autoComplete');
   const inputHandler = function(e) {
-    if(e.target.value=="2624cdab70a28578cbc7d0f0f7c729b4"){
+    if(e.target.value=="myAPI"){
       $('.movie-button').attr('disabled', true);
     }
     else{
@@ -12,7 +14,7 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var my_api_key = 'YOUR_API_KEY';
+    var my_api_key = console.log(process.env.myAPI);
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
