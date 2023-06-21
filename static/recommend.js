@@ -14,8 +14,8 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var apiKey = process.env.API_KEY;
-    console.log(`API Key: ${apiKey}`);
+   const apiKey = process.env.API_KEY; 
+   var my_api_key = apiKey;
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -29,8 +29,8 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var apiKey = process.env.API_KEY;
-  console.log(`API Key: ${apiKey}`);
+ const apiKey = process.env.API_KEY; 
+ var my_api_key = apiKey;
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
