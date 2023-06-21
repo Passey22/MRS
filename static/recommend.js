@@ -1,3 +1,5 @@
+require('dotenv').config();
+ 
 $(function() {
   // Button will be disabled until we type anything inside the input field
   const source = document.getElementById('autoComplete');
@@ -12,7 +14,8 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var my_api_key = 'YOUR_API_KEY';
+    var apiKey = process.env.API_KEY;
+    console.log(`API Key: ${apiKey}`);
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -26,7 +29,8 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var my_api_key = 'YOUR_API_KEY';
+  var apiKey = process.env.API_KEY;
+  console.log(`API Key: ${apiKey}`);
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
