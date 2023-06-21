@@ -1,5 +1,5 @@
 require('dotenv').config();
-const apiKey = process.env.API_KEY;
+const my_api_key = process.env.API_KEY;
  
 $(function() {
   // Button will be disabled until we type anything inside the input field
@@ -15,7 +15,6 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-   var my_api_key = apiKey;
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -29,7 +28,6 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){ 
- var my_api_key = apiKey;
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
